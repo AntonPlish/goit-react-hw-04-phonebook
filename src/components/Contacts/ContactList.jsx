@@ -9,20 +9,20 @@ const ListSlyled = styled.ul`
   font-weight: 500;
 `;
 
-const ContactList = function ({ contacts, filter, handleDelete }) {
+const ContactList = ({ contacts, filter, handleDelete }) => {
   return (
     <ListSlyled>
       {contacts
         .filter(contact =>
           contact.name.toLowerCase().includes(filter.toLowerCase())
-        )
+      )
         .map((contact, idx) => {
           return (
             <li key={idx}>
               <ContactItem contact={contact} handleDelete={handleDelete} />
             </li>
           );
-        })}
+          })}
     </ListSlyled>
   );
 };
